@@ -1,25 +1,31 @@
 import React, { Component } from "react";
-import '@/components/Header/SearchBar/Search/search.scss';
-
-import SearchList from '@/components/Header/SearchBar/Search/SearchList';
-
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import './search.scss';
+import SearchList from './SearchList';
+import { Location } from '../../../../api'
+// import { searchValue } from 'src/store/actions'
 const enhanceWithClickOutside = require('react-click-outside');
 
-import categories from '@/components/Header/SearchBar/Category/categories.json';
 
-const optionsCategories = categories.map((cat, i) => {
+
+function mapStateToProps(state) {
   return {
-    ...cat,
-    value: i
+    search: state.search
   }
-})
+}
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    // searchValue: searchValue
+  }, dispatch)
+}
 
 class Search extends Component {
   state = {
     view: false,
     value: "",
     maxItems: 10,
-    cat: optionsCategories,
     categoriesFilter: []
   }
 
@@ -30,22 +36,31 @@ class Search extends Component {
   searchChange = (e) => {
     if(e.target.value.length > 0) {
       this.viewSearchList(true);
+      Location.searchLocation(e.target.value)
+        .then(res => {
+          this.searchFilter(res.data);
+        })
     } else {
       this.viewSearchList(false);
     }
-    this.searchFilter(e.target.value);
+    // this.searchFilter(e.target.value);
     this.setState({ value: e.target.value });
   }
 
+  componentDidMount() {
+    Location.searchLocation('Ульяновск');
+  }
+
   searchFilter = (val) => {
-    const filterCat = this.state.cat.filter(
-      (category, i) => i < this.state.maxItems && category.text.toLowerCase().includes(val.toLowerCase())
-    );
-    this.setState({ categoriesFilter: filterCat });
+    // const filterCat = this.props.search.filter(
+    //   (category, i) => i < this.state.maxItems && category.text.toLowerCase().includes(val.toLowerCase())
+    // );
+    this.setState({ categoriesFilter: val });
   }
 
   updateData = (value) => {
     this.setState({ value: value });
+    // this.props.searchValue(value);
   }
 
   // toggle = (val) => {
@@ -82,4 +97,4 @@ class Search extends Component {
     );
   }
 }
-export default Search;
+export default connect(mapStateToProps, matchDispatchToProps)(Search);

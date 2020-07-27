@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '@/components/Header/SearchBar/Search/SearchList/searchList.scss';
+import './searchList.scss';
 
 const enhanceWithClickOutside = require('react-click-outside');
 
@@ -34,7 +34,7 @@ const SearchList = (() => {
           <div className="search__list">
             {
               this.props.categoriesFilter.map((category, i) => {
-                return <div className="search__item" onClick={() => this.setValueList(category.text)} key={category.value}>{category.text}</div>
+                return <div className="search__item" onClick={() => this.setValueList(category.name)} key={category.value}>{category.name}</div>
               })
             }
           </div>

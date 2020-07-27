@@ -1,0 +1,12 @@
+.auto {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 10px);
+
+  
+  .item {
+    width: calc((100% / 3) - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}

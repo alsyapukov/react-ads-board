@@ -1,16 +1,25 @@
-import React, { Component } from "react";
-import '@/components/base/Button/button.scss'
+import React from "react";
+import cn from 'classnames/bind';
+import s from "./button.module.scss";
 
-class Select extends Component {
-  
-  state = {
-    value: null
-  }
+const cx = cn.bind(s);
 
-  render() {
-    return (
-      <button className="button button_blue">Найти</button>
-    );
-  }
-}
-export default Select;
+const Button = ({title, type, theme, click, full}) => {
+  return (
+    <button
+      className={cx(
+        s.button,
+        {
+          [`button_${theme}`]: theme,
+          [`button_fullString`]: full
+        }
+      )}
+      onClick={click}
+      type={type ? type : null}
+    >
+      {title ? title : "Button"}
+    </button>
+  );
+};
+
+export default Button;

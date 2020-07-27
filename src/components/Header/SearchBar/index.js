@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import '@/components/Header/SearchBar/searchBar.scss'
+import './searchBar.scss'
 
-import Category from '@/components/Header/SearchBar/Category'
-import Search from '@/containers/Search'
-import Button from '@/components/base/Button'
+import Category from './Category'
+import Location from './Location'
+import Search from './Search'
+import Button from '../../../components/base/Button'
 
 class SearchBar extends Component {
 
@@ -17,10 +18,10 @@ class SearchBar extends Component {
           <Search />
         </div>
         <div className="search-bar__item search-bar__location">
-          <Category />
+          <Location />
         </div>
         <div className="search-bar__item search-bar__find">
-          <Button />
+          <Button theme="blue" title="Найти" />
         </div>
       </div>
     );
