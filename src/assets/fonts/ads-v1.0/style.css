@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'ads';
+  src:  url('fonts/ads.eot?qhhu7y');
+  src:  url('fonts/ads.eot?qhhu7y#iefix') format('embedded-opentype'),
+    url('fonts/ads.ttf?qhhu7y') format('truetype'),
+    url('fonts/ads.woff?qhhu7y') format('woff'),
+    url('fonts/ads.svg?qhhu7y#ads') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-wps-"], [class*=" icon-wps-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ads' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-wps-point-full:before {
+  content: "\e900";
+}
+.icon-wps-chat:before {
+  content: "\e901";
+}
+.icon-wps-coding:before {
+  content: "\e902";
+}
+.icon-wps-contact:before {
+  content: "\e903";
+}
+.icon-wps-feedback-1:before {
+  content: "\e904";
+}
+.icon-wps-telephone:before {
+  content: "\e916";
+}
+.icon-wps-team:before {
+  content: "\e915";
+}
+.icon-wps-feedback:before {
+  content: "\e905";
+}
+.icon-wps-user-1:before {
+  content: "\e917";
+}
+.icon-wps-laptop:before {
+  content: "\e906";
+}
+.icon-wps-webpage:before {
+  content: "\e907";
+}
+.icon-wps-cancel:before {
+  content: "\e908";
+}
+.icon-wps-check:before {
+  content: "\e909";
+}
+.icon-wps-heart:before {
+  content: "\e90a";
+}
+.icon-wps-home:before {
+  content: "\e90b";
+}
+.icon-wps-maximize:before {
+  content: "\e90c";
+}
+.icon-wps-menu:before {
+  content: "\e90d";
+}
+.icon-wps-mouse:before {
+  content: "\e90e";
+}
+.icon-wps-printer:before {
+  content: "\e90f";
+}
+.icon-wps-search:before {
+  content: "\e910";
+}
+.icon-wps-settings:before {
+  content: "\e911";
+}
+.icon-wps-shield:before {
+  content: "\e912";
+}
+.icon-wps-smartphone:before {
+  content: "\e913";
+}
+.icon-wps-speech-bubble:before {
+  content: "\e914";
+}
+.icon-wps-star:before {
+  content: "\e918";
+}
+.icon-wps-point:before {
+  content: "\e919";
+}
+.icon-wps-point-simple:before {
+  content: "\e91a";
+}
+.icon-wps-point-leg .path1:before {
+  content: "\e91b";
+  color: rgb(0, 0, 0);
+}
+.icon-wps-point-leg .path2:before {
+  content: "\e91c";
+  margin-left: -1em;
+  color: rgb(249, 30, 30);
+}
+.icon-wps-point-leg .path3:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(226, 27, 27);
+}
+.icon-wps-point-leg .path4:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}

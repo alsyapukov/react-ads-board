@@ -1,0 +1,13 @@
+.aside {
+  width: 270px;
+  min-width: 270px;
+  background: #fff;
+  position: relative;
+  
+  &__sticky {
+    position: sticky;
+    top: 60px;
+    max-height: calc(100vh - 60px);
+    overflow: auto;
+  }
+}
